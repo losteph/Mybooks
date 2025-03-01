@@ -7,4 +7,4 @@ I do NOT own most of the Figure used in my classes transcribed notes. I make all
 
 ---
 ### Support
-If you want to support my work, you can at https://www.paypal.com/paypalme/StefanoDiLena
+If you want to support my work, you can at 
