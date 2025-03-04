@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download PDF</title>
+    <script>
+        async function loadReadme() {
+            const response = await fetch("README.md");
+            const text = await response.text();
+            document.getElementById("readme").innerText = text;
+        }
+    </script>
 </head>
-<body>
+<body onload="loadReadme()">
     <h1>Elenco dei PDF</h1>
 
     <h2>Primo Anno</h2>
     <ul>
-        <li><a href="https://github.com/losteph/Mybooks/raw/main/I%20year/Dynamical%20System%20Theory/Formulario_DST_Stefano_Di_Lena.pdf" download>DST.pdf</a></li>
-        <li><a href="https://github.com/NOME_UTENTE/NOME_REPO/raw/main/primo_anno/file2.pdf" download>Scarica file2.pdf</a></li>
+        <li><a href="primo_anno/file1.pdf" download>Scarica file1.pdf</a></li>
+        <li><a href="primo_anno/file2.pdf" download>Scarica file2.pdf</a></li>
     </ul>
 
     <h2>Secondo Anno</h2>
     <ul>
-        <li><a href="https://github.com/NOME_UTENTE/NOME_REPO/raw/main/secondo_anno/file3.pdf" download>Scarica file3.pdf</a></li>
-        <li><a href="https://github.com/NOME_UTENTE/NOME_REPO/raw/main/secondo_anno/file4.pdf" download>Scarica file4.pdf</a></li>
+        <li><a href="secondo_anno/file3.pdf" download>Scarica file3.pdf</a></li>
+        <li><a href="secondo_anno/file4.pdf" download>Scarica file4.pdf</a></li>
     </ul>
+
+    <hr>
+    <h2>README</h2>
+    <pre id="readme">Caricamento del README...</pre>
 </body>
 </html>
