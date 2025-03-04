@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
     <script>
         async function loadReadme() {
             const response = await fetch("README.md");
             const text = await response.text();
-            document.getElementById("readme").innerText = text;
+            const converter = new showdown.Converter();
+            document.getElementById("readme").innerHTML = converter.makeHtml(text);
         }
     </script>
 </head>
@@ -29,6 +31,6 @@
 
     <hr>
     <h2>README</h2>
-    <pre id="readme">Caricamento del README...</pre>
+    <div id="readme">Caricamento del README...</div>
 </body>
 </html>
